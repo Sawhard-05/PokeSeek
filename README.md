@@ -20,7 +20,7 @@ The application has a simple user interface where users can enter a Pokémon’s
 
 `pip install flask requests`  
 `python poke.py`  
-# Open browser and go to: `http://127.0.0.1:5000/`
+ `Open browser and go to: http://127.0.0.1:5000/`
 
 ## Why I Built This  
 I built PokeSeek to practice working with APIs, Flask, and web development while creating something fun and interactive. This project helps improve backend skills by handling API requests and responses, managing errors, and integrating a simple frontend with Flask. Additionally, it serves as a great example of how to fetch and display real-time data dynamically.
