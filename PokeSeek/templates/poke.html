@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeSeek</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='poke.css') }}">
+</head>
+<body>
+    <h1>PokeSeek</h1>
+    <form action="/" method="post">
+        <input type="text" name="pokemon_name" placeholder="Enter Pokemon Name " required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if pokemon %}
+    <div class="pokemon-container">
+        <h2>{{ pokemon.name }}</h2>
+        <img src="{{ pokemon.image }}" alt="{{ pokemon.name }}">
+        <p><strong>Description:</strong> {{ pokemon.description }}</p>
+        <p><strong>Height:</strong> {{ pokemon.height }}m</p>
+        <p><strong>Weight:</strong> {{ pokemon.weight }}kg</p>
+        <p><strong>Type:</strong> {{ pokemon.types | join(', ') }}</p>
+        <p><strong>Abilities:</strong> {{ ', '.join(pokemon.abilities) }}</p>
+       <!-- <p><strong>Moves:</strong> {{ ', '.join(pokemon.moves) }}</p> -->
+        <hr>
+        <h3>Stats:</h3>
+        <p><strong>HP:</strong> {{ pokemon.hp }}</p>
+        <p><strong>Attack:</strong> {{ pokemon.attack }}</p>
+        <p><strong>Defense:</strong> {{ pokemon.defense }}</p>
+        <p><strong>Speed:</strong> {{ pokemon.speed }}</p>
+    </div>
+{% elif error %}
+    <p style="color: red; font-weight: bold;">{{ error }}</p>
+{% endif %}
+
+</body>
+</html>
